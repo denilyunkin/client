@@ -1,0 +1,37 @@
+#include "connectiondialog.h"
+#include <QVBoxLayout>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QLabel>
+
+ConnectDialog::ConnectDialog(QWidget *parent)
+    : QDialog(parent)
+{
+    setWindowTitle("Подключение к серверу");
+
+    auto *layout = new QVBoxLayout(this);
+
+    auto *label = new QLabel("Введите адрес сервера:");
+    addressEdit = new QLineEdit(this);
+    addressEdit->setPlaceholderText("ws://localhost:8080");
+
+    connectButton = new QPushButton("Подключиться", this);
+
+    layout->addWidget(label);
+    layout->addWidget(addressEdit);
+    layout->addWidget(connectButton);
+
+    connect(connectButton, &QPushButton::clicked, this, &ConnectDialog::onConnectClicked);
+}
+
+void ConnectDialog::onConnectClicked()
+{
+    if (!addressEdit->text().isEmpty()) {
+        accept(); // Закрыть диалог и вернуть QDialog::Accepted
+    }
+}
+
+QString ConnectDialog::serverAddress() const
+{
+    return addressEdit->text();
+}
