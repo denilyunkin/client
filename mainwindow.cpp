@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tabWidget->clear();
     ui->tabWidget->hide();
     ui->pushButton->setVisible(false);
-    //123
+    //123123
 
     // Клик по файлу
     connect(ui->treeView, &QTreeView::doubleClicked, this, &MainWindow::FileClicked);
