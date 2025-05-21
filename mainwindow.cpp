@@ -32,13 +32,16 @@ MainWindow::MainWindow(QWidget *parent)
     // splitter = ui->splitter;
     // splitter->setSizes({600, 200});
     // Обработка нажатие кнопки, вызов функции
-    connect(ui->pushButton, &QPushButton::clicked,this,&MainWindow::toggleTree);
+    connect(ui->pu[xz@archlinux LogViewer-main]$ git push
+                    Everything up-to-date
+                    [xz@archlinux LogViewer-main]$shButton, &QPushButton::clicked,this,&MainWindow::toggleTree);
 
     socket = new QTcpSocket(this);
 
     connect(socket, &QTcpSocket::readyRead, this, &MainWindow::slotReadyRead);
     connect(socket, &QTcpSocket::disconnected, socket, &QTcpSocket::deleteLater);
     nextBlockSize = 0;
+    // 123 123 123
 }
 
 
