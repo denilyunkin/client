@@ -35,7 +35,7 @@ private:
     QFileSystemModel *fileModel;
 
     QTcpSocket *socket;
-    QByteArray Data;
+    QByteArray Data;//123
 
     void closeTab(int index);
     void FileClicked(const QModelIndex &index);
